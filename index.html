@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="kU7H6VldkzYXCv7nhcmnAOUMJuW1Cg0VNZBNtAjTEqM" />
+  <title>Free Tools Hub - Online Utilities</title>
+  <meta name="description" content="Free Tools Hub offers online utilities like password generator, text converter, and more. All tools free and easy to use.">
+  <meta name="keywords" content="Free Tools, Online Utilities, Password Generator, Text Converter, Calculator">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Welcome to Free Tools Hub 🔧</h1>
+    <p>Use our free online utilities instantly without downloads.</p>
+
+    <div class="card">
+      <h2>Password Generator</h2>
+      <button onclick="generatePassword()">Generate Password</button>
+      <p id="password"></p>
+    </div>
+
+    <div class="card">
+      <h2>Text Case Converter</h2>
+      <textarea id="textInput" rows="4" placeholder="Enter text..."></textarea><br>
+      <button onclick="toUpperCaseText()">UPPERCASE</button>
+      <button onclick="toLowerCaseText()">lowercase</button>
+      <p id="textOutput"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Free Tools Hub</p>
+  </footer>
+
+  <script>
+    function generatePassword() {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+      let pass = "";
+      for (let i=0; i<12; i++) {
+        pass += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      document.getElementById("password").innerText = pass;
+    }
+    function toUpperCaseText() {
+      document.getElementById("textOutput").innerText = document.getElementById("textInput").value.toUpperCase();
+    }
+    function toLowerCaseText() {
+      document.getElementById("textOutput").innerText = document.getElementById("textInput").value.toLowerCase();
+    }
+  </script>
+</body>
+</html>
